@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Header = () => {
+const Header = ({ text }) => {
   return (
-    <div>Header</div>
+    <h1 id="kewaunee-brewing-company-header">{text}</h1>
   )
 }
 
