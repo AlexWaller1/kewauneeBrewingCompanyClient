@@ -11,6 +11,17 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Kewaunee Brewing Company Website
+
+// We want to have a navigation bar
+
+// we want to have a weather page connected to the openweather api
+
+// We want a reviews page that will where each post will have like button
+// eventually we want to submit posts to an Express.js server
+
+// We want a menu that uses state to display the menu
+
+// We want a cart that the user can use to make a takeout order
+
+// possibly a feature to make a reservation
