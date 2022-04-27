@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 
  const NavLinks = () => {
   return (
-    <ul>
-        <li>
+    <ul className="nav-links-list">
+        <h4>
             <Link to="/">Home</Link>
-        </li>
-        <li>
+        </h4>
+        <h4>
             <Link to="/menu">Our Menu</Link>
-        </li>
-        <li>
+        </h4>
+        <h4>
             <Link to="/reviews">Reviews</Link>
-        </li>
-        <li>
+        </h4>
+        <h4>
             <Link to="/weather">Outdoor Dining</Link>
-        </li>
-        <li>
+        </h4>
+        <h4>
             <Link to="/about">About KBS</Link>
-        </li>
-        <li>
+        </h4>
+        <h4>
             <Link to="/contact">Contact Us</Link>
-        </li>
+        </h4>
     </ul>
   )
 }

@@ -2,3 +2,25 @@ body {
     background-color: orange;
     color: rgb(0, 85, 255);
 }
+
+.nav-links-list {
+    display: flex;
+    background-color: gainsboro;
+    
+}
+
+.nav-links-list h4 {
+    padding: 9px 80px;
+}
+
+.about-page-div {
+    text-align: center;
+}
+
+#about-header-1 {
+    margin-top: 10px;
+}
+
+.home-page-div {
+    text-align: center;
+}

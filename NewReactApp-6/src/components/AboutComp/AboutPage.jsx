@@ -1,8 +1,11 @@
 import React from 'react'
+import AboutHeader from './AboutHeader';
 
  const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <div className='about-page-div'>
+       <AboutHeader text="About Kewaunee Brewing Company"/>
+    </div>
   )
 }
 

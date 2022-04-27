@@ -1,8 +1,11 @@
 import React from 'react'
+import HomePageHeader from './HomePageHeader';
 
  const HomePage = () => {
   return (
-    <h1>Kewaunee Brewing Company</h1>
+    <div className='home-page-div'>
+      <HomePageHeader text="Welcome to the Kewaunee Brewing Company"/>
+    </div>
   )
 }
 
