@@ -4,7 +4,7 @@ import MenuListDiv from './MenuListDiv';
 import MenuParagraphDiv from './MenuParagraphDiv';
 import { useState, useEffect } from "react";
 
- const MenuPage = () => {
+ const MenuPage = ({userCart, cartCount}) => {
     
     const [appetizers, setAppetizers] = useState([
         {
@@ -60,11 +60,15 @@ import { useState, useEffect } from "react";
         }
     ]);
 
+    const addToCart = () => {
+        console.log("Added to Cart");
+    }
+
   return (
     <div className='menu-page-div'>
         <MenuPageHeader text="Take A Look At Our Menu"/>
         <MenuParagraphDiv />
-        <MenuListDiv mainCourses={mainCourses} appetizers={appetizers}/>
+        <MenuListDiv addToCart={addToCart} mainCourses={mainCourses} appetizers={appetizers} userCart={userCart} cartCount={cartCount}/>
 
     </div>
   )
