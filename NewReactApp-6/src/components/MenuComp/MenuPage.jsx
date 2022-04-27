@@ -60,19 +60,52 @@ import { useState, useEffect } from "react";
         }
     ]);
 
+    const [desserts, setDesserts] = useState([
+        {
+            id: 1,
+            name: "Vanilla Sundae",
+            img: "",
+            price: 9.99
+        },
+        {
+            id: 2,
+            name: "Tiramasu",
+            img: "",
+            price: 14.99
+        },
+        {
+            id: 3,
+            name: "Chocolate Mousse Cake",
+            img: "",
+            price: 13.99
+        },
+        {
+            id: 4,
+            name: "Vanilla Lemon Cake",
+            img: "",
+            price: 12.99
+        }
+    ])
+
     const addToCart = () => {
-        console.log("Added to Cart");
+        console.log("Appetizer Added to Cart");
     }
 
     const addToCart2 = () => {
-        console.log("Added to Cart");
+        console.log("Main Course Added to Cart");
     }
+
+    const addToCart3 = () => {
+        console.log("Dessert Added to Cart");
+    }
+
+
 
   return (
     <div className='menu-page-div'>
         <MenuPageHeader text="Take A Look At Our Menu"/>
         <MenuParagraphDiv />
-        <MenuListDiv addToCart={addToCart} mainCourses={mainCourses} appetizers={appetizers} userCart={userCart} cartCount={cartCount}/>
+        <MenuListDiv addToCart={addToCart} addToCart2={addToCart2} addToCart3={addToCart3} mainCourses={mainCourses} appetizers={appetizers} userCart={userCart} cartCount={cartCount}/>
 
     </div>
   )

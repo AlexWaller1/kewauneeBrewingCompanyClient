@@ -1,7 +1,7 @@
 import React from 'react'
 import AddMainCourseBtn from './AddMainCourseBtn';
 
-const MainCourseDiv = ({ mainCourses }) => {
+const MainCourseDiv = ({ mainCourses, addToCart2 }) => {
   return (
     <div id="main-course-div">
         <h1 id="our-main-courses">Our Main Courses:</h1>
@@ -12,7 +12,7 @@ const MainCourseDiv = ({ mainCourses }) => {
                     <h2>{m1.name}</h2>
                     <img src={m1.img} alt="Food Image" />
                     <h3>{m1.price}</h3>
-                    <AddMainCourseBtn />
+                    <AddMainCourseBtn addToCart2={addToCart2}/>
                     
                 </div>)}
         </ul>

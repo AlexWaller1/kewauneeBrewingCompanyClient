@@ -1,8 +1,8 @@
 import React from 'react'
 
- const AddMainCourseBtn = () => {
+ const AddMainCourseBtn = ({ addToCart2 }) => {
   return (
-    <button className="btn btn-primary">Add To Cart</button>
+    <button className="btn btn-primary" onClick={addToCart2}>Add To Cart</button>
   )
 }
 
