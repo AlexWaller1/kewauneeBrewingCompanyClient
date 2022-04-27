@@ -64,6 +64,10 @@ import { useState, useEffect } from "react";
         console.log("Added to Cart");
     }
 
+    const addToCart2 = () => {
+        console.log("Added to Cart");
+    }
+
   return (
     <div className='menu-page-div'>
         <MenuPageHeader text="Take A Look At Our Menu"/>

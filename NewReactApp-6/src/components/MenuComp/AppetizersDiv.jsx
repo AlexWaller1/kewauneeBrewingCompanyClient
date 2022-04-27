@@ -3,8 +3,11 @@ import AddAppetizerBtn from './AddAppetizerBtn';
 
  const AppetizersDiv = ({ appetizers, addToCart }) => {
   return (
-    <div>
-        <ul id="appetizers-div">
+    <div id="appetizers-div">
+        <h1>Our Appetizers:</h1>
+        <br />
+        
+        <ul >
            {appetizers.map(a1 => 
            <div key={a1.id} id="appetizers-div-2">
             <h2 >{a1.name}</h2>

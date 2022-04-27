@@ -43,8 +43,19 @@ body {
 
 #appetizers-div {
     float: left;
+    margin-left: 350px;
 }
 
 #appetizers-div-2 {
     margin-bottom: 30px;
 }
+
+#menu-divider {
+    float: left;
+}
+
+#main-course-div-2 {
+    margin-bottom: 30px;
+}
+
+    
