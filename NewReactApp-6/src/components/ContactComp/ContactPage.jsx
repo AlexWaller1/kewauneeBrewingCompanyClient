@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactPageHeader from './ContactPageHeader';
+import {useState, useEffect} from "react";
 
  const ContactPage = () => {
   return (

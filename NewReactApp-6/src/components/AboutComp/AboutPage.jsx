@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutHeader from './AboutHeader';
+import {useState, useEffect} from "react";
 
  const AboutPage = () => {
   return (

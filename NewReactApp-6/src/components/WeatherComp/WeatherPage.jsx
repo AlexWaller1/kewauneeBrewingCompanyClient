@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherPageHeader from './WeatherPageHeader';
+import { useState, useEffect} from "react"
 
  const WeatherPage = () => {
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
 import HomePageHeader from './HomePageHeader';
+import {useState, useEffect} from "react";
 
  const HomePage = () => {
   return (
