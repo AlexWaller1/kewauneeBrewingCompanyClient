@@ -10,7 +10,7 @@ import ContactPage from './ContactComp/ContactPage';
 
  const RouterLinks = () => {
   return (
-    <Router >
+    
      <Routes>
        <Route  path="/" element={<HomePage />}/>
        <Route  path="/menu" element={<MenuPage />}/>
@@ -19,7 +19,7 @@ import ContactPage from './ContactComp/ContactPage';
        <Route  path="/about" element={<AboutPage />}/>
        <Route  path="/contact" element={<ContactPage />}/>
      </Routes>
-     </Router>
+    
   )
 }
 
