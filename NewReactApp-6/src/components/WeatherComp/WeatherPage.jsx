@@ -1,8 +1,11 @@
 import React from 'react'
+import WeatherPageHeader from './WeatherPageHeader';
 
  const WeatherPage = () => {
   return (
-    <div>WeatherPage</div>
+    <div className='weather-page-div'>
+        <WeatherPageHeader text="Check The Weather For Outdoor Dining Opportunities"/>
+    </div>
   )
 }
 
