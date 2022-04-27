@@ -1,7 +1,13 @@
 import React from 'react'
+import { Switch, Route} from "react-router-dom";
 
-export const Router = () => {
+
+ const Router = () => {
   return (
-    <div>Router</div>
+     <Switch>
+
+     </Switch>
   )
 }
+
+export default Router;
