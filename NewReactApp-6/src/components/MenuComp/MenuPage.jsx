@@ -64,7 +64,7 @@ import { useState, useEffect } from "react";
     <div className='menu-page-div'>
         <MenuPageHeader text="Take A Look At Our Menu"/>
         <MenuParagraphDiv />
-        <MenuListDiv foodMenu={mainCourses}/>
+        <MenuListDiv mainCourses={mainCourses} appetizers={appetizers}/>
 
     </div>
   )

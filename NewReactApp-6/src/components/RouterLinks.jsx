@@ -8,16 +8,16 @@ import AboutPage from './AboutComp/AboutPage';
 import ContactPage from './ContactComp/ContactPage';
 
 
- const RouterLinks = () => {
+ const RouterLinks = ({ userCart, cartCount}) => {
   return (
     
      <Routes>
-       <Route  path="/" element={<HomePage />}/>
-       <Route  path="/menu" element={<MenuPage />}/>
-       <Route  path="/reviews" element={<ReviewsPage />}/>
-       <Route  path="/weather" element={<WeatherPage />}/>
-       <Route  path="/about" element={<AboutPage />}/>
-       <Route  path="/contact" element={<ContactPage />}/>
+       <Route  path="/" element={<HomePage userCart={userCart} cartCount={cartCount}/>}/>
+       <Route  path="/menu" element={<MenuPage userCart={userCart} cartCount={cartCount}/>}/>
+       <Route  path="/reviews" element={<ReviewsPage userCart={userCart} cartCount={cartCount}/>}/>
+       <Route  path="/weather" element={<WeatherPage userCart={userCart} cartCount={cartCount}/>}/>
+       <Route  path="/about" element={<AboutPage userCart={userCart} cartCount={cartCount}/>}/>
+       <Route  path="/contact" element={<ContactPage userCart={userCart} cartCount={cartCount}/>}/>
      </Routes>
     
   )
