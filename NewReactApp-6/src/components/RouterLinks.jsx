@@ -12,12 +12,12 @@ import ContactPage from './ContactComp/ContactPage';
   return (
     <Router >
      <Routes>
-       <Route  path="/" element={HomePage}/>
-       <Route  path="/menu" element={MenuPage}/>
-       <Route  path="/reviews" element={ReviewsPage}/>
-       <Route  path="/weather" element={WeatherPage}/>
-       <Route  path="/about" element={AboutPage}/>
-       <Route  path="/contact" element={ContactPage}/>
+       <Route  path="/" element={<HomePage />}/>
+       <Route  path="/menu" element={<MenuPage />}/>
+       <Route  path="/reviews" element={<ReviewsPage />}/>
+       <Route  path="/weather" element={<WeatherPage />}/>
+       <Route  path="/about" element={<AboutPage />}/>
+       <Route  path="/contact" element={<ContactPage />}/>
      </Routes>
      </Router>
   )

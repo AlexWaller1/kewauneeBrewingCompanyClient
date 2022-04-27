@@ -2,7 +2,7 @@ import React from 'react'
 
  const HomePage = () => {
   return (
-    <div>HomeComp</div>
+    <h1>Kewaunee Brewing Company</h1>
   )
 }
 
