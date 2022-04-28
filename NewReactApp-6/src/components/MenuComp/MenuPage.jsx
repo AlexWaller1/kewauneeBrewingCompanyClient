@@ -87,16 +87,16 @@ import { useState, useEffect } from "react";
         }
     ])
 
-    const addToCart = () => {
-        console.log("Appetizer Added to Cart");
+    const addToCart = (id) => {
+        console.log("Appetizer Added to Cart", id);
     }
 
-    const addToCart2 = () => {
-        console.log("Main Course Added to Cart");
+    const addToCart2 = (id) => {
+        console.log("Main Course Added to Cart", id);
     }
 
-    const addToCart3 = () => {
-        console.log("Dessert Added to Cart");
+    const addToCart3 = (id) => {
+        console.log("Dessert Added to Cart", id);
     }
 
 
