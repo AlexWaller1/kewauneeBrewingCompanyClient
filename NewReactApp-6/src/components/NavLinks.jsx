@@ -22,6 +22,9 @@ import { Link } from "react-router-dom";
         <h4>
             <Link to="/contact">Contact Us</Link>
         </h4>
+        <h4>
+            <Link to="/cart">Checkout</Link>
+        </h4>
     </ul>
   )
 }

@@ -41,25 +41,25 @@ function App() {
 
 const [mainCourses, setFoodMenu] = useState([
     {
-        id: 1,
+        id: 5,
         name: "Cheese Burger and Fries",
         img: "",
         price: 15.99
     },
     {
-        id: 2, 
+        id: 6, 
         name: "Ultimate Turkey Club",
         img: "",
         price: 12.99
     },
     {
-        id: 3,
+        id: 7,
         name: "Cowboy Ribeye",
         img: "",
         price: 34.99
     },
     {
-        id: 4,
+        id: 8,
         name: "KBC Spare Ribs",
         img: "",
         price: 24.99
@@ -68,25 +68,25 @@ const [mainCourses, setFoodMenu] = useState([
 
 const [desserts, setDesserts] = useState([
     {
-        id: 1,
+        id: 9,
         name: "Vanilla Sundae",
         img: "",
         price: 9.99
     },
     {
-        id: 2,
+        id: 10,
         name: "Tiramasu",
         img: "",
         price: 14.99
     },
     {
-        id: 3,
+        id: 11,
         name: "Chocolate Mousse Cake",
         img: "",
         price: 13.99
     },
     {
-        id: 4,
+        id: 12,
         name: "Vanilla Lemon Cake",
         img: "",
         price: 12.99
@@ -94,11 +94,15 @@ const [desserts, setDesserts] = useState([
 ])
 
 const addToCart = (id) => {
-    console.log("Appetizer Added to Cart", "new", id);
+    
 
     let newAppetizer = appetizers.filter(a1 => a1.id == id);
 
-    setCart([...userCart, newAppetizer]);
+    console.log(newAppetizer);
+
+    setCart([...userCart, ...newAppetizer]);
+
+    console.log(userCart);
 }
 
 const addToCart2 = (id) => {
@@ -106,7 +110,7 @@ const addToCart2 = (id) => {
 
     let newMainCourse = mainCourses.filter(m1 => m1.id == id);
 
-    setCart([...userCart, newMainCourse]);
+    setCart([...userCart, ...newMainCourse]);
 }
 
 const addToCart3 = (id) => {
@@ -114,7 +118,7 @@ const addToCart3 = (id) => {
 
     let newDessert = desserts.filter(d1 => d1.id == id);
 
-    setCart([...userCart, newDessert]);
+    setCart([...userCart, ...newDessert]);
 
 }
 
