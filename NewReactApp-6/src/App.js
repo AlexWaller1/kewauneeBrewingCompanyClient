@@ -10,7 +10,9 @@ function App() {
 
   const [userCart, setCart] = useState([]);
 
-  const [userCartNames, setCartNames] = useState({});
+  const [userCartNames, setCartNames] = useState({
+
+  });
 
   const [cartCount, setCartCount] = useState({count: 0});
 
@@ -20,28 +22,32 @@ function App() {
         name: "Buffalo Wings",
         img: "",
         price: 14.99,
-        quantity: 0
+        quantity: 1,
+        objectKey: "buffaloWings"
     },
     {
         id: 2,
         name: "Ultimate Stacked Nachos",
         img: "",
         price: 12.99,
-        quantity: 0
+        quantity: 1,
+        objectKey: "stackedNachos"
     },
     {
         id: 3,
         name: "Barria Tacos",
         img: "",
         price: 16.99,
-        quantity: 0
+        quantity: 1,
+        objectKey: "barriaTacos"
     },
     {
         id: 4,
         name: "Potstickers",
         img: "",
         price: 17.99,
-        quantity: 0
+        quantity: 1,
+        objectKey: "potStickers"
     }
 ])
 
@@ -50,25 +56,33 @@ const [mainCourses, setFoodMenu] = useState([
         id: 5,
         name: "Cheese Burger and Fries",
         img: "",
-        price: 15.99
+        price: 15.99,
+        quantity: 1,
+        objectKey: "cheeseBurger"
     },
     {
         id: 6, 
         name: "Ultimate Turkey Club",
         img: "",
-        price: 12.99
+        price: 12.99,
+        quantity: 1,
+        objectKey: "turkeyClub"
     },
     {
         id: 7,
         name: "Cowboy Ribeye",
         img: "",
-        price: 34.99
+        price: 34.99,
+        quanity: 1,
+        objectKey: "cowboyRibeye"
     },
     {
         id: 8,
         name: "KBC Spare Ribs",
         img: "",
-        price: 24.99
+        price: 24.99,
+        quantity: 1,
+        objectKey: "spareRibs"
     }
 ]);
 
@@ -77,25 +91,33 @@ const [desserts, setDesserts] = useState([
         id: 9,
         name: "Vanilla Sundae",
         img: "",
-        price: 9.99
+        price: 9.99,
+        quantity: 1,
+        objectKey: "vanillaSundae"
     },
     {
         id: 10,
         name: "Tiramasu",
         img: "",
-        price: 14.99
+        price: 14.99,
+        quantity: 1,
+        objectKey: "tiramasu"
     },
     {
         id: 11,
         name: "Chocolate Mousse Cake",
         img: "",
-        price: 13.99
+        price: 13.99,
+        quantity: 1,
+        objectKey: "chocolateMousse"
     },
     {
         id: 12,
         name: "Vanilla Lemon Cake",
         img: "",
-        price: 12.99
+        price: 12.99,
+        quantity: 1,
+        objectKey: "lemonCake"
     }
 ])
 
@@ -108,9 +130,9 @@ const addToCart = (id) => {
 
     setCart([...userCart, ...newAppetizer]);
 
-    setCartNames([...userCartNames, newAppetizer[0].name]);
+   const cartClone = [...userCart];
 
-    console.log(userCart);
+
 }
 
 const addToCart2 = (id) => {
@@ -120,7 +142,7 @@ const addToCart2 = (id) => {
 
     setCart([...userCart, ...newMainCourse]);
 
-    setCartNames([...userCartNames, newMainCourse[0].name]);
+    
 }
 
 const addToCart3 = (id) => {
