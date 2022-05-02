@@ -10,6 +10,8 @@ function App() {
 
   const [userCart, setCart] = useState([]);
 
+  const [userCartNames, setCartNames] = useState({});
+
   const [cartCount, setCartCount] = useState({count: 0});
 
   const [appetizers, setAppetizers] = useState([
@@ -17,25 +19,29 @@ function App() {
         id: 1,
         name: "Buffalo Wings",
         img: "",
-        price: 14.99
+        price: 14.99,
+        quantity: 0
     },
     {
         id: 2,
         name: "Ultimate Stacked Nachos",
         img: "",
-        price: 12.99
+        price: 12.99,
+        quantity: 0
     },
     {
         id: 3,
         name: "Barria Tacos",
         img: "",
-        price: 16.99
+        price: 16.99,
+        quantity: 0
     },
     {
         id: 4,
         name: "Potstickers",
         img: "",
-        price: 17.99
+        price: 17.99,
+        quantity: 0
     }
 ])
 
@@ -102,6 +108,8 @@ const addToCart = (id) => {
 
     setCart([...userCart, ...newAppetizer]);
 
+    setCartNames([...userCartNames, newAppetizer[0].name]);
+
     console.log(userCart);
 }
 
@@ -111,6 +119,8 @@ const addToCart2 = (id) => {
     let newMainCourse = mainCourses.filter(m1 => m1.id == id);
 
     setCart([...userCart, ...newMainCourse]);
+
+    setCartNames([...userCartNames, newMainCourse[0].name]);
 }
 
 const addToCart3 = (id) => {
@@ -120,6 +130,15 @@ const addToCart3 = (id) => {
 
     setCart([...userCart, ...newDessert]);
 
+}
+
+const deleteFromCart = (id) => {
+
+  console.log("item deleted from cart");
+
+  let newCart = userCart.filter(u1 => u1.id != id);
+
+  setCart([...newCart]);
 }
 
 
@@ -133,7 +152,7 @@ const addToCart3 = (id) => {
       </div>
       <NavLinks />
 
-      <RouterLinks userCart={userCart} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} addToCart2={addToCart2} addToCart3={addToCart3}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} addToCart2={addToCart2} addToCart3={addToCart3} deleteFromCart={deleteFromCart}/>
       
     </Router>
   );
