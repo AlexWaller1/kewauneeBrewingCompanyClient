@@ -181,7 +181,27 @@ const addToCart2 = (id) => {
 
     let newMainCourse = mainCourses.filter(m1 => m1.id == id);
 
-    setCart([...userCart, ...newMainCourse]);
+    let newName = newMainCourse[0].name;
+
+    let cartClone = [...userCart];
+
+    let cartNameClone = [...userCartNames];
+
+    if (!cartNameClone.includes(newName)) {
+        cartNameClone.push(newName);
+        setCart([...userCart, ...newMainCourse]);
+        setCartNames([...cartNameClone]);
+    } else {
+        let i = 0;
+        for (; i < cartClone.length; i++) {
+            if (cartClone[i].name == newName) {
+                cartClone[i].quantity = cartClone[i].quantity + 1;
+                setCart([...cartClone]);
+            }
+        }
+    }
+
+    
 
     
 }
