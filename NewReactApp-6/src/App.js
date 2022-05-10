@@ -10,7 +10,7 @@ function App() {
 
   const [userCart, setCart] = useState([]);
 
-  const [userCartNames, setCartNames] = useState({});
+  const [userCartNames, setCartNames] = useState([]);
 
   const [cartCount, setCartCount] = useState({
       buffaloWings: 1,
@@ -30,7 +30,7 @@ function App() {
         name: "Buffalo Wings",
         img: "",
         quantity: 1,
-        price: 14.99 * this.quantity,
+        price: 14.99 ,
         objectKey: "buffaloWings"
     },
     {
@@ -38,7 +38,7 @@ function App() {
         name: "Ultimate Stacked Nachos",
         img: "",
         quantity: 1,
-        price: 12.99 * this.quantity,
+        price: 12.99 ,
         objectKey: "stackedNachos"
     },
     {
@@ -46,7 +46,7 @@ function App() {
         name: "Barria Tacos",
         img: "",
         quantity: 1,
-        price: 16.99 * this.quantity,
+        price: 16.99 ,
         objectKey: "barriaTacos"
     },
     {
@@ -54,7 +54,7 @@ function App() {
         name: "Potstickers",
         img: "",
         quantity: 1,
-        price: 17.99 * this.quantity,
+        price: 17.99 ,
         objectKey: "potStickers"
     }
 ])
@@ -65,7 +65,7 @@ const [mainCourses, setFoodMenu] = useState([
         name: "Cheese Burger and Fries",
         img: "",
         quantity: 1,
-        price: 15.99 * this.quantity,
+        price: 15.99 ,
         objectKey: "cheeseBurger"
     },
     {
@@ -73,7 +73,7 @@ const [mainCourses, setFoodMenu] = useState([
         name: "Ultimate Turkey Club",
         img: "",
         quantity: 1,
-        price: 12.99 * this.quantity,
+        price: 12.99,
         objectKey: "turkeyClub"
     },
     {
@@ -81,7 +81,7 @@ const [mainCourses, setFoodMenu] = useState([
         name: "Cowboy Ribeye",
         img: "",
         quantity: 1,
-        price: 34.99 * this.quantity,
+        price: 34.99,
         objectKey: "cowboyRibeye"
     },
     {
@@ -89,7 +89,7 @@ const [mainCourses, setFoodMenu] = useState([
         name: "KBC Spare Ribs",
         img: "",
         quantity: 1,
-        price: 24.99 * this.quantity,
+        price: 24.99,
         objectKey: "spareRibs"
     }
 ]);
@@ -100,7 +100,7 @@ const [desserts, setDesserts] = useState([
         name: "Vanilla Sundae",
         img: "",
         quantity: 1,
-        price: 9.99 * this.quantity,
+        price: 9.99,
         objectKey: "vanillaSundae"
     },
     {
@@ -108,7 +108,7 @@ const [desserts, setDesserts] = useState([
         name: "Tiramasu",
         img: "",
         quantity: 1,
-        price: 14.99 * this.quantity,
+        price: 14.99,
         objectKey: "tiramasu"
     },
     {
@@ -116,7 +116,7 @@ const [desserts, setDesserts] = useState([
         name: "Chocolate Mousse Cake",
         img: "",
         quantity: 1,
-        price: 13.99 * this.quantity,
+        price: 13.99,
         objectKey: "chocolateMousse"
     },
     {
@@ -124,7 +124,7 @@ const [desserts, setDesserts] = useState([
         name: "Vanilla Lemon Cake",
         img: "",
         quantity: 1,
-        price: 12.99 * this.quantity,
+        price: 12.99,
         objectKey: "lemonCake"
     }
 ])
@@ -134,7 +134,30 @@ const addToCart = (id) => {
 
     let newAppetizer = appetizers.filter(a1 => a1.id == id);
 
-    let objectClone = {...userCartNames}
+    console.log(newAppetizer)
+
+    let newName = newAppetizer[0].name;
+
+    let cartClone = [...userCart];
+
+    let cartNameClone = [...userCartNames];
+
+    if (!cartNameClone.includes(newName)) {
+        cartNameClone.push(newName);
+        setCart([...userCart, ...newAppetizer]);
+        setCartNames([...cartNameClone]);
+    } else {
+          let i = 0;
+          for (; i < cartClone.length; i++) {
+              if (cartClone[i].name == newName) {
+                  cartClone[i].quantity = cartClone[i].quantity + 1;
+                  setCart([...cartClone]);
+              }
+          }
+      
+    }
+
+    console.log(userCartNames);
 
     /* 
     
@@ -146,9 +169,9 @@ const addToCart = (id) => {
 
     console.log(newAppetizer);
 
-    setCart([...userCart, ...newAppetizer]);
+    
 
-   const cartClone = [...userCart];
+ 
 
 
 }
