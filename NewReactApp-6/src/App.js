@@ -10,35 +10,43 @@ function App() {
 
   const [userCart, setCart] = useState([]);
 
-  const [userCartNames, setCartNames] = useState({
+  const [userCartNames, setCartNames] = useState({});
+
+  const [cartCount, setCartCount] = useState({
+      buffaloWings: 1,
+      stackedNachos: 1,
+      barriaTacos: 1,
+      potStickers: 1,
+      cheeseBurger: 1,
+      turkeyClub: 1,
+      cowboyRibeye: 1,
+      spareRibs: 1,
 
   });
-
-  const [cartCount, setCartCount] = useState({count: 0});
 
   const [appetizers, setAppetizers] = useState([
     {
         id: 1,
         name: "Buffalo Wings",
         img: "",
-        price: 14.99,
         quantity: 1,
+        price: 14.99 * this.quantity,
         objectKey: "buffaloWings"
     },
     {
         id: 2,
         name: "Ultimate Stacked Nachos",
         img: "",
-        price: 12.99,
         quantity: 1,
+        price: 12.99 * this.quantity,
         objectKey: "stackedNachos"
     },
     {
         id: 3,
         name: "Barria Tacos",
         img: "",
-        price: 16.99,
         quantity: 1,
+        price: 16.99 * this.quantity,
         objectKey: "barriaTacos"
     },
     {
@@ -125,6 +133,16 @@ const addToCart = (id) => {
     
 
     let newAppetizer = appetizers.filter(a1 => a1.id == id);
+
+    let objectClone = {...userCartNames}
+
+    /* 
+    
+    if (objectClone[newAppetizer[0].objectKey] != undefined) {
+      
+    }
+    
+    */
 
     console.log(newAppetizer);
 
