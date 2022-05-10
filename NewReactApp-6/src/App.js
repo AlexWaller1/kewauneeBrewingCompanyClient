@@ -211,7 +211,27 @@ const addToCart3 = (id) => {
 
     let newDessert = desserts.filter(d1 => d1.id == id);
 
-    setCart([...userCart, ...newDessert]);
+    let newName = newDessert[0].name;
+
+    let cartClone = [...userCart];
+
+    let cartNameClone = [...userCartNames];
+
+    if (!cartNameClone.includes(newName)) {
+        cartNameClone.push(newName);
+        setCart([...userCart, ...newDessert]);
+        setCartNames([...cartNameClone]);
+    } else {
+        let i = 0;
+        for (; i < cartClone.length; i++) {
+            if (cartClone[i].name == newName) {
+                cartClone[i].quantity = cartClone[i].quantity + 1;
+                setCart([...cartClone]);
+            }
+        }
+    }
+
+    
 
 }
 
