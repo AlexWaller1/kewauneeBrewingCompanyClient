@@ -5,13 +5,13 @@ import MainCourseDiv from './MainCourseDiv';
 import DessertsDiv from './DessertsDiv';
 
 
- const MenuListDiv = ({ mainCourses, appetizers, desserts, addToCart, addToCart2, addToCart3, takeFromCart }) => {
+ const MenuListDiv = ({ mainCourses, appetizers, desserts, addToCart, addToCart2, addToCart3, takeFromCart, takeFromCart2 }) => {
   return (
     <div id="menu-list-div">
       
-      <AppetizersDiv  appetizers={appetizers} addToCart={addToCart} takeFromCart={takeFromCart}/>
+      <AppetizersDiv  appetizers={appetizers} addToCart={addToCart} takeFromCart={takeFromCart} />
       
-      <MainCourseDiv mainCourses={mainCourses} addToCart2={addToCart2}/>
+      <MainCourseDiv mainCourses={mainCourses} addToCart2={addToCart2} takeFromCart2={takeFromCart2}/>
       <br />
       <DessertsDiv desserts={desserts} addToCart3={addToCart3}/>
 

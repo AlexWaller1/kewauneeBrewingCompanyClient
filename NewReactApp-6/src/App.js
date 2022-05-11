@@ -230,6 +230,29 @@ const addToCart2 = (id) => {
     
 }
 
+
+const takeFromCart2 = (id) => {
+
+       let currentItem = mainCourses.filter(m1 => m1.id == id);
+
+       let currentID = currentItem[0].id;
+
+       let currentQuantity = currentItem[0].quantity;
+
+       let cartClone = [...userCart];
+
+       if (currentQuantity > 0) {
+           let i = 0;
+
+           for (; i < cartClone.length; i++) {
+               if (currentID == cartClone[i].id) {
+                   cartClone[i].quantity = cartClone[i].quantity - 1;
+                   setCart([...cartClone]);
+               }
+           }
+       }
+}
+
 const addToCart3 = (id) => {
     console.log("Dessert Added to Cart", "new", id);
 
@@ -299,7 +322,7 @@ const deleteFromCart = (id) => {
       </div>
       <NavLinks />
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} addToCart3={addToCart3} deleteFromCart={deleteFromCart}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} deleteFromCart={deleteFromCart}/>
       
     </Router>
   );
