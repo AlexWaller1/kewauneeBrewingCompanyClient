@@ -184,6 +184,8 @@ const takeFromCart = (id) => {
 
     let currentQuantity = currentItem[0].quantity;
 
+    let newQuantity = 0;
+
     let cartClone = [...userCart];
 
     if (currentQuantity > 0) {
@@ -192,11 +194,22 @@ const takeFromCart = (id) => {
         for (; i < cartClone.length; i++) {
             if (currentID == cartClone[i].id) {
                 cartClone[i].quantity = cartClone[i].quantity - 1;
+                newQuantity = cartClone[i].quantity;
+                console.log(newQuantity);
                 setCart([...cartClone]);
             }
         }
         
+        
     }
+
+    if (newQuantity == 0) {
+        console.log("quantity == 0");
+        let c2 = cartClone.filter(c1 => c1.quantity != 0);
+        setCart([...c2]);
+    }
+    
+   
 }
 
 const addToCart2 = (id) => {

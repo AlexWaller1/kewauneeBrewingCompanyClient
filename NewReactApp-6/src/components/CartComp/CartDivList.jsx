@@ -1,9 +1,12 @@
 import React from 'react'
 
  const CartDivList = ({userCart, cartCount, deleteFromCart}) => {
+
+  
   return (
     <div id="cart-div-list">
         <ul className="list-group">
+          
             {userCart.map(u1 => 
 
                
