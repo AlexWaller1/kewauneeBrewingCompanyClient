@@ -12,7 +12,8 @@ const MainCourseDiv = ({ mainCourses, addToCart2 }) => {
                     <h2>{m1.name}</h2>
                     <img src={m1.img} alt="Food Image" />
                     <h3>{m1.price}</h3>
-                    <button className='btn btn-primary' onClick={() => addToCart2(m1.id)}>Add To Cart</button>
+                    <button className='btn btn-primary' id="main-course-btn" onClick={() => addToCart2(m1.id)}>Add To Cart +</button>
+                    <h3>{`Quantity: ${m1.quantity}`}</h3>
                     
                 </div>)}
         </ul>
