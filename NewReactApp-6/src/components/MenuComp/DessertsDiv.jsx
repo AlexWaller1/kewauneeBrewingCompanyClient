@@ -11,8 +11,10 @@ import  AddDessertBtn  from './AddDessertBtn';
                     <h2>{d1.name}</h2>
                     <img src="" alt="Dessert Image" />
                     <h3>{d1.price}</h3>
-                    <button className='btn btn-primary' id="dessert-btn" onClick={() => addToCart3(d1.id)}>Add To Cart +</button>
+                    <button className='btn btn-primary' id="dessert-btn" onClick={() => addToCart3(d1.id)}> Cart +</button>
                     <h3>{`Quantity: ${d1.quantity}`}</h3>
+                    <button className='btn btn-primary' id="dessert-btn-2">Cart -</button>
+                    <h3>-------------------</h3>
                 </div>
                 
                 )}

@@ -79,13 +79,31 @@ body {
 
 #appetizer-btn {
     margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#appetizer-btn-2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #main-course-btn {
     margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#main-course-btn-2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 #dessert-btn {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#dessert-btn-2 {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 
