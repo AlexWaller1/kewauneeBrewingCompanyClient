@@ -1,7 +1,7 @@
 import React from 'react'
 import  AddDessertBtn  from './AddDessertBtn';
 
- const DessertsDiv = ({ desserts, addToCart3 }) => {
+ const DessertsDiv = ({ desserts, addToCart3, takeFromCart3 }) => {
   return (
     <div id="desserts-div">
         <h1>Our Desserts:</h1>
@@ -13,7 +13,7 @@ import  AddDessertBtn  from './AddDessertBtn';
                     <h3>{d1.price}</h3>
                     <button className='btn btn-primary' id="dessert-btn" onClick={() => addToCart3(d1.id)}> Cart +</button>
                     <h3>{`Quantity: ${d1.quantity}`}</h3>
-                    <button className='btn btn-primary' id="dessert-btn-2">Cart -</button>
+                    <button className='btn btn-primary' id="dessert-btn-2" onClick={() => takeFromCart3(d1.id)}>Cart -</button>
                     <h3>-------------------</h3>
                 </div>
                 
