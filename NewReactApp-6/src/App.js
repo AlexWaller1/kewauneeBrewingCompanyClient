@@ -29,7 +29,7 @@ function App() {
         id: 1,
         name: "Buffalo Wings",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 14.99 ,
         objectKey: "buffaloWings"
     },
@@ -37,7 +37,7 @@ function App() {
         id: 2,
         name: "Ultimate Stacked Nachos",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 12.99 ,
         objectKey: "stackedNachos"
     },
@@ -45,7 +45,7 @@ function App() {
         id: 3,
         name: "Barria Tacos",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 16.99 ,
         objectKey: "barriaTacos"
     },
@@ -53,7 +53,7 @@ function App() {
         id: 4,
         name: "Potstickers",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 17.99 ,
         objectKey: "potStickers"
     }
@@ -64,7 +64,7 @@ const [mainCourses, setFoodMenu] = useState([
         id: 5,
         name: "Cheese Burger and Fries",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 15.99 ,
         objectKey: "cheeseBurger"
     },
@@ -72,7 +72,7 @@ const [mainCourses, setFoodMenu] = useState([
         id: 6, 
         name: "Ultimate Turkey Club",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 12.99,
         objectKey: "turkeyClub"
     },
@@ -80,7 +80,7 @@ const [mainCourses, setFoodMenu] = useState([
         id: 7,
         name: "Cowboy Ribeye",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 34.99,
         objectKey: "cowboyRibeye"
     },
@@ -88,7 +88,7 @@ const [mainCourses, setFoodMenu] = useState([
         id: 8,
         name: "KBC Spare Ribs",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 24.99,
         objectKey: "spareRibs"
     }
@@ -99,7 +99,7 @@ const [desserts, setDesserts] = useState([
         id: 9,
         name: "Vanilla Sundae",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 9.99,
         objectKey: "vanillaSundae"
     },
@@ -107,7 +107,7 @@ const [desserts, setDesserts] = useState([
         id: 10,
         name: "Tiramasu",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 14.99,
         objectKey: "tiramasu"
     },
@@ -115,7 +115,7 @@ const [desserts, setDesserts] = useState([
         id: 11,
         name: "Chocolate Mousse Cake",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 13.99,
         objectKey: "chocolateMousse"
     },
@@ -123,7 +123,7 @@ const [desserts, setDesserts] = useState([
         id: 12,
         name: "Vanilla Lemon Cake",
         img: "",
-        quantity: 1,
+        quantity: 0,
         price: 12.99,
         objectKey: "lemonCake"
     }
@@ -144,6 +144,7 @@ const addToCart = (id) => {
 
     if (!cartNameClone.includes(newName)) {
         cartNameClone.push(newName);
+        newAppetizer[0].quantity = newAppetizer[0].quantity + 1;
         setCart([...userCart, ...newAppetizer]);
         setCartNames([...cartNameClone]);
     } else {
