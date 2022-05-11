@@ -68,6 +68,12 @@ body {
 
 .cart-div-list-2 {
     margin-bottom: 30px;
+   
+    
 }
 
-    
+#cart-div-list {
+    float: left;
+    margin-left: 45px;
+}
+

@@ -226,6 +226,7 @@ const addToCart3 = (id) => {
         for (; i < cartClone.length; i++) {
             if (cartClone[i].name == newName) {
                 cartClone[i].quantity = cartClone[i].quantity + 1;
+                
                 setCart([...cartClone]);
             }
         }
@@ -238,10 +239,28 @@ const addToCart3 = (id) => {
 const deleteFromCart = (id) => {
 
   console.log("item deleted from cart");
+  
+  let cartClone = [...userCart];
 
-  let newCart = userCart.filter(u1 => u1.id != id);
+  let cartItemArray = cartClone.filter(c1 => c1.id == id);
 
-  setCart([...newCart]);
+  let itemName = cartItemArray[0].name;
+
+  if (cartItemArray[0].quantity > 1) {
+      let i = 0;
+      for (; i < cartClone.length; i++) {
+          if (cartClone[i].name == itemName) {
+              cartClone[i].quantity = cartClone[i].quantity - 1;
+              setCart([...cartClone]);
+          } 
+      }
+  }else {
+    let newCart = userCart.filter(u1 => u1.id != id);
+
+    setCart([...newCart]);
+  }
+
+  
 }
 
 
