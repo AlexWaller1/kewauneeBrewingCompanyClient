@@ -252,6 +252,8 @@ const takeFromCart2 = (id) => {
 
        let currentQuantity = currentItem[0].quantity;
 
+       let newQuantity = 0;
+
        let cartClone = [...userCart];
 
        if (currentQuantity > 0) {
@@ -260,9 +262,14 @@ const takeFromCart2 = (id) => {
            for (; i < cartClone.length; i++) {
                if (currentID == cartClone[i].id) {
                    cartClone[i].quantity = cartClone[i].quantity - 1;
+                   newQuantity = cartClone[i].quantity;
                    setCart([...cartClone]);
                }
            }
+       }
+       if (newQuantity == 0) {
+           let c2 = cartClone.filter(m1 => m1.quantity != 0);
+           setCart([...c2]);
        }
 }
 
@@ -304,6 +311,8 @@ const takeFromCart3 = (id) => {
 
     let currentQuantity = currentItem[0].quantity;
 
+    let newQuantity = 0;
+
     let cartClone = [...userCart];
 
     if (currentQuantity > 0) {
@@ -312,9 +321,14 @@ const takeFromCart3 = (id) => {
         for (; i < cartClone.length; i++) {
             if (currentID == cartClone[i].id) {
                 cartClone[i].quantity = cartClone[i].quantity - 1;
+                newQuantity = cartClone[i].quantity;
                 setCart([...cartClone]);
             }
         }
+    }
+    if (newQuantity == 0) {
+        let c2 = cartClone.filter(d1 => d1.quantity != 0);
+        setCart([...c2]);
     }
 }
 
