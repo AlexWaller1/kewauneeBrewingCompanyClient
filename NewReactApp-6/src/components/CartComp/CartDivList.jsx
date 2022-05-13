@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
  const CartDivList = ({userCart, cartCount, deleteFromCart}) => {
 
@@ -26,6 +27,7 @@ import React from 'react'
                 
         </ul>
 
+       <Link to="/checkout" className="btn btn-primary">Continue To Checkout</Link>
        
         
     </div>

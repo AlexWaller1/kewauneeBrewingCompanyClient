@@ -109,10 +109,13 @@ body {
 
 #weather-info-list {
     display: flex;
+    margin-right: 35px;
 }
 
 .weather-list-item {
     background-color: rgb(19, 28, 28);
-    margin-right: 15px ;
+    padding: 35px 35px;
+    color: azure;
+    margin-right: 85px ;
 }
 
