@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
  const CartDivList = ({userCart, cartCount, deleteFromCart}) => {
 
+  console.log(userCart.length);
   
   return (
     <div id="cart-div-list">
@@ -27,7 +28,9 @@ import { Link } from "react-router-dom"
                 
         </ul>
 
-       <Link to="/checkout" className="btn btn-primary">Continue To Checkout</Link>
+        {userCart.length > 0 ? <Link to="/checkout" className="btn btn-primary">Continue To Checkout</Link> : <></>}
+
+       
        
         
     </div>

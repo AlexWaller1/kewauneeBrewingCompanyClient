@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 
  const CartCheckoutDiv = ({ userCart}) => {
@@ -13,11 +14,24 @@ import React from 'react'
     }
 
     console.log(userCart);
+    //---------------------------------------------
+    //--------------------------------------
+    let clicked = false;
+
+    function changeClick() {
+        clicked = !clicked;
+        console.log("react")
+    }
   return (
     <div>
         <h1>Order Checkout</h1>
         <h2>Amount Total</h2>
         <h3>{`$${Math.round(orderTotal)}`}</h3>
+        <button className="btn btn-primary" onClick={() => changeClick()}>Pay For Order</button>
+        {clicked ? <form>
+            <input type="text" placeholder='card number...'/>
+            <input type="submit"  text="Place Order"/>
+        </form> : <div></div>}
     </div>
   )
 }
