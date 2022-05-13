@@ -107,3 +107,12 @@ body {
     margin-bottom: 15px;
 }
 
+#weather-info-list {
+    display: flex;
+}
+
+.weather-list-item {
+    background-color: rgb(19, 28, 28);
+    margin-right: 15px ;
+}
+
