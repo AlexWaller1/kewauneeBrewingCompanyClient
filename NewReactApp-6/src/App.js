@@ -127,7 +127,9 @@ const [desserts, setDesserts] = useState([
         price: 12.99,
         objectKey: "lemonCake"
     }
-])
+]);
+
+
 
 const addToCart = (id) => {
     
@@ -372,7 +374,7 @@ const deleteFromCart = (id) => {
       
       <NavLinks />
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} />
       {/* </div> */}
       </div>
     </Router>
