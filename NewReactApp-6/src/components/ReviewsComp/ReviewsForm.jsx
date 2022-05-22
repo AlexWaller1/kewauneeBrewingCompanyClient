@@ -15,13 +15,16 @@ const ReviewsForm = ({ reviews, setReviews }) => {
      console.log("review form submitted");
      let newReview = {
        title: revTitle,
-       text: revText
+       text: revText,
+       clicked: false
      };
      console.log(newReview);
-     if (newReview.title != "" || newReview.text != "") {
+     if (newReview.title == "" || newReview.text == "") {
        console.log("review must have title and text");
      } else {
       setReviews([...reviews, newReview]);
+      setTitle("");
+      setText("");
      }
    }
    
@@ -31,13 +34,13 @@ const ReviewsForm = ({ reviews, setReviews }) => {
     <form id="review-form" onSubmit={onSubmit}>
         
         <label className="rev-form-label"><h4>Post Title:</h4></label>
-        <input type="text"  placeholder='Post Title...'/>
+        <input type="text" value={revTitle} placeholder='Post Title...' onChange={e => setTitle(e.target.value)}/>
         
       <br />
       <br />
       
         <label className="rev-form-label"><h4>Leave Review Here:</h4></label>
-        <input type="textbox" placeholder="Type Review Here..."/>
+        <textarea id="review-text-area" cols="55" rows="5" value={revText} placeholder="Post Review..." onChange={e => setText(e.target.value)}></textarea>
       
       <br />
       <br />
