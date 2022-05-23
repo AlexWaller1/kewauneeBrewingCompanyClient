@@ -14,12 +14,36 @@ import ReviewsList from './ReviewsList'
         data => setReviews([...data])
       )
     )
-  })
+  }, []);
+
+  const deleteReview = async (id) => {
+     await fetch (`http://localhost:3006/api/comments/${id}`,
+     {
+       method: "DELETE"
+     })
+
+     setReviews(reviews.filter(review => review.userId !== id));
+  }
+
+  const addReview = async (review) => {
+     await fetch("http://localhost:3006/api/comments", {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(review),
+    }).then(res => res.json()).
+    then(data => setReviews(data))
+
+   
+  }
+
   return (
     <div className='reviews-page-div'>
         <ReviewsPageHeader text="We Want To Hear About Your Experience!"/>
-        <ReviewsForm reviews={reviews} setReviews={setReviews}/>
-        <ReviewsList reviews={reviews}/>
+        <ReviewsForm reviews={reviews} setReviews={setReviews} addReview={addReview}/>
+        <ReviewsList reviews={reviews} deleteReview={deleteReview}/>
         
     </div>
   )

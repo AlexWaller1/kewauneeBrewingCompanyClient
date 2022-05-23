@@ -2,11 +2,13 @@ import React from 'react'
 import { useState } from "react";
 
 
-const ReviewsForm = ({ reviews, setReviews }) => {
+const ReviewsForm = ({ reviews, setReviews, addReview }) => {
 
    const [revTitle, setTitle] = useState("");
 
    const [revText, setText] = useState("");
+
+   const [clicked, setClicked] = useState(false);
 
    
 
@@ -18,13 +20,28 @@ const ReviewsForm = ({ reviews, setReviews }) => {
        text: revText,
        clicked: false
      };
+
+     console.log(reviews);
+
      console.log(newReview);
      if (newReview.title == "" || newReview.text == "") {
        console.log("review must have title and text");
      } else {
-      setReviews([...reviews, newReview]);
-      setTitle("");
-      setText("");
+      
+      addReview(newReview);
+       setTitle("");
+       setText("");
+      
+      // const res = await fetch("http://localhost:3006/comments", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-type": "application/json"
+      //   },
+      //   body: JSON.stringify(newReview)
+      // });
+      // const data = await res.json();
+
+      // setReviews([...reviews, data]);
      }
    }
    
