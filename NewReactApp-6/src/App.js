@@ -129,6 +129,141 @@ const [desserts, setDesserts] = useState([
     }
 ]);
 
+const [ales, setAles] = useState([
+    {
+        id: 13,
+        name: "Sturgeon Ale",
+        img: "",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "sturgeonAle"
+    },
+    {
+        id: 14,
+        name: "The New Denmark",
+        img: "",
+        quantity: 0,
+        price: 8.99,
+        objectKey: "theNewDenmark"
+    },
+    {
+        id: 15,
+        name: "The De Pere Roundabout",
+        img: "",
+        quantity: 0,
+        price: 4.99,
+        objectKey: "theDePereRoundabout"
+    },
+    {
+        id: 16,
+        name: "The Snow Bank",
+        img: "",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "theSnowBank"
+    }
+]);
+
+const [lagers, setLagers] = useState([
+    {
+        id: 17,
+        name: "The Double Takeout",
+        img: "",
+        quantity: 0,
+        price: 7.99,
+        objectKey: "theDoubleTakeout"
+    },
+    {
+        id: 18,
+        name: "Antigo Road",
+        img: "",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "antigoRoad"
+    },
+    {
+        id: 19, 
+        name: "Fox River Water",
+        img: "",
+        quantity: 0,
+        price: 5.99,
+        objectKey: "foxRiverWater"
+    },
+    {
+        id: 20,
+        name: "Paper Mill Lager",
+        img: "",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "paperMillLager"
+    }
+]);
+
+const [porters, setPorters] = useState([
+    {
+        id: 21,
+        name: "Quindalee Porter",
+        img: "",
+        quantity: 0,
+        price: 7.99,
+        objectKey: "quindaleePorter"
+    },
+    {
+        id: 22,
+        name: "Porter Pig",
+        img: "",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "porterPig"
+    },
+    {
+        id: 23,
+        name: "Egret Pond",
+        img: "",
+        quantity: 0,
+        price: 9.99,
+        objectKey: "whiteHeronPond"
+    },
+    {
+        id: 24,
+        name: "Blue Heron Lake",
+        quantity: 0,
+        price: 9.99,
+        objectKey: "blueHeronLake"
+    }
+]);
+
+const [stouts, setStouts] = useState([
+    {
+        id: 25, 
+        name: "West Bend Stout",
+        quantity: 0,
+        price: 4.99,
+        objectKey: "westBendStout"
+    },
+    {
+        id: 26,
+        name: "The U.P.",
+        quantity: 0,
+        price: 8.99,
+        objectKey: "up"
+    },
+    {
+        id: 27,
+        name: "Night Highway",
+        quantity: 0,
+        price: 6.99,
+        objectKey: "nightHighway"
+    },
+    {
+        id: 28,
+        name: "The Local Bar",
+        quantity: 0,
+        price: 4.99,
+        objectKey: "localBar"
+    }
+]);
+
 
 
 const addToCart = (id) => {
@@ -374,7 +509,7 @@ const deleteFromCart = (id) => {
       
       <NavLinks />
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} />
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts}/>
       {/* </div> */}
       </div>
     </Router>
