@@ -29,7 +29,7 @@ import ReviewsList from './ReviewsList'
      await fetch("http://localhost:3006/api/comments", {
       method: "POST",
       headers: {
-        'Accept': 'application/json, text/plain, */*',
+        // 'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(review),
@@ -39,11 +39,26 @@ import ReviewsList from './ReviewsList'
    
   }
 
+  const editReview = async (review) => {
+    await fetch("http://localhost:3006/api/comments", {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(review)
+    }).then(res => res.json()).
+    then(data => setReviews(data));
+  }
+
+  const isClicked = (id) => {
+    
+  }
+
   return (
     <div className='reviews-page-div'>
         <ReviewsPageHeader text="We Want To Hear About Your Experience!"/>
         <ReviewsForm reviews={reviews} setReviews={setReviews} addReview={addReview}/>
-        <ReviewsList reviews={reviews} deleteReview={deleteReview}/>
+        <ReviewsList reviews={reviews} deleteReview={deleteReview} editReview={editReview}/>
         
     </div>
   )
