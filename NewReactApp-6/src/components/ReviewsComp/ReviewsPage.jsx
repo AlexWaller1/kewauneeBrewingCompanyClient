@@ -47,18 +47,25 @@ import ReviewsList from './ReviewsList'
       },
       body: JSON.stringify(review)
     }).then(res => res.json()).
-    then(data => setReviews(data));
+    then(data => setReviews([...data]));
   }
 
   const isClicked = (id) => {
-    
+    let clone = [...reviews]
+    let i = 0;
+    for (; i < clone.length; i++) {
+      if (clone[i].userId == id) {
+        clone[i].clicked = !clone[i].clicked;
+      }
+    }
+    setReviews([...clone]);
   }
 
   return (
     <div className='reviews-page-div'>
         <ReviewsPageHeader text="We Want To Hear About Your Experience!"/>
         <ReviewsForm reviews={reviews} setReviews={setReviews} addReview={addReview}/>
-        <ReviewsList reviews={reviews} deleteReview={deleteReview} editReview={editReview}/>
+        <ReviewsList reviews={reviews} deleteReview={deleteReview} editReview={editReview} isClicked={isClicked}/>
         
     </div>
   )
