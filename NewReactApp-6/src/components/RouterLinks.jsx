@@ -9,6 +9,7 @@ import AboutPage from './AboutComp/AboutPage';
 import ContactPage from './ContactComp/ContactPage';
 import CartPage from './CartComp/CartPage';
 import CartCheckoutDiv from './CartComp/CartCheckoutDiv';
+import BeerDiv from './BeerComp/BeerDiv';
 
 
  const RouterLinks = ({ userCart, userCartNames, cartCount, appetizers, mainCourses, desserts, addToCart, addToCart2, addToCart3, deleteFromCart, takeFromCart, takeFromCart2, takeFromCart3}) => {
@@ -23,6 +24,7 @@ import CartCheckoutDiv from './CartComp/CartCheckoutDiv';
        <Route  path="/contact" element={<ContactPage userCart={userCart} cartCount={cartCount}/>}/>
        <Route  path="/cart" element={<CartPage userCart={userCart} cartCount={cartCount} deleteFromCart={deleteFromCart}/>}/>
        <Route  path="/checkout" element={<CartCheckoutDiv userCart={userCart}/>}/>
+       <Route  path="/beers" element={<BeerDiv userCart={userCart}/>}/>
      </Routes>
     
   )
