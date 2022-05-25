@@ -8,6 +8,9 @@ import { Link } from "react-router-dom";
             <Link to="/">Home</Link>
         </h4>
         <h4>
+            <Link to="/beers">Beers</Link>
+        </h4>
+        <h4>
             <Link to="/menu">Our Menu</Link>
         </h4>
         <h4>
