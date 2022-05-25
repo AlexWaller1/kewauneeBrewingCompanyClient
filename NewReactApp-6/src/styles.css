@@ -62,6 +62,18 @@ body {
     margin-bottom: 30px;
 }
 
+.ind-ale-div {
+    margin-bottom: 30px;
+}
+
+.ind-lagers-div {
+    margin-bottom: 30px;
+}
+
+#ales-lagers-div {
+    float: left;
+}
+
 #cart-page-div {
     text-align: center;
 }
