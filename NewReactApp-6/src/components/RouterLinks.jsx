@@ -12,7 +12,7 @@ import CartCheckoutDiv from './CartComp/CartCheckoutDiv';
 import BeerDiv from './BeerComp/BeerDiv';
 
 
- const RouterLinks = ({ userCart, userCartNames, cartCount, appetizers, mainCourses, desserts, addToCart, addToCart2, addToCart3, deleteFromCart, takeFromCart, takeFromCart2, takeFromCart3, ales, lagers, porters, stouts}) => {
+ const RouterLinks = ({ userCart, userCartNames, cartCount, appetizers, mainCourses, desserts, addToCart, addToCart2, addToCart3, deleteFromCart, takeFromCart, takeFromCart2, takeFromCart3, ales, lagers, porters, stouts, addBeerToCart}) => {
   return (
     
      <Routes>
@@ -24,7 +24,7 @@ import BeerDiv from './BeerComp/BeerDiv';
        <Route  path="/contact" element={<ContactPage userCart={userCart} cartCount={cartCount}/>}/>
        <Route  path="/cart" element={<CartPage userCart={userCart} cartCount={cartCount} deleteFromCart={deleteFromCart}/>}/>
        <Route  path="/checkout" element={<CartCheckoutDiv userCart={userCart}/>}/>
-       <Route  path="/beers" element={<BeerDiv userCart={userCart} ales={ales} stouts={stouts} porters={porters} lagers={lagers}/>}/>
+       <Route  path="/beers" element={<BeerDiv userCart={userCart} ales={ales} stouts={stouts} porters={porters} lagers={lagers} addBeerToCart={addBeerToCart}/>}/>
      </Routes>
     
   )

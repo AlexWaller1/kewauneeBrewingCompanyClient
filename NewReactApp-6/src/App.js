@@ -496,6 +496,32 @@ const deleteFromCart = (id) => {
   
 }
 
+const addBeerToCart = (id, beer) => {
+    let beerFilter = beer.filter(b1 => b1.id == id);
+
+    let beerItem = beerFilter[0];
+
+    let beerName = beerItem.name;
+
+    let namesClone = [...userCartNames];
+
+    let cartClone = [...userCart];
+
+    if (!namesClone.includes(beerName)) {
+        namesClone.push(beerName);
+        cartClone.push(beerItem);
+        beerItem.quantity = beerItem.quantity + 1;
+    } else {
+        beerItem.quantity = beerItem.quantity + 1;
+    }
+
+    setCart([...cartClone]);
+    setCartNames([...namesClone]);
+    
+
+    
+}
+
 
 
   return (
@@ -509,7 +535,7 @@ const deleteFromCart = (id) => {
       
       <NavLinks />
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart}/>
       {/* </div> */}
       </div>
     </Router>

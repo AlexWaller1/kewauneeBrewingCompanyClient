@@ -70,8 +70,22 @@ body {
     margin-bottom: 30px;
 }
 
+.ind-porter-div {
+    margin-bottom: 30px;
+}
+
+.ind-stout-div {
+    margin-bottom: 30px;
+}
+
 #ales-lagers-div {
     float: left;
+    margin-left: 350px;
+}
+
+#porters-stouts-div {
+    float: right;
+    margin-right: 350px;
 }
 
 #cart-page-div {
