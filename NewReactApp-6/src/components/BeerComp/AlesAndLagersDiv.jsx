@@ -1,6 +1,6 @@
 import React from 'react'
 
- const AlesAndLagersDiv = ({userCart, ales, lagers, addBeerToCart}) => {
+ const AlesAndLagersDiv = ({userCart, ales, lagers, addBeerToCart, takeBeerFromCart}) => {
   return (
     <div id="ales-lagers-div">
       
@@ -15,7 +15,7 @@ import React from 'react'
             <br />
             <button className='btn btn-primary' onClick={() => addBeerToCart(ale.id, ales)}>Cart +</button>
             <h3>{ale.quantity}</h3>
-            <button className='btn btn-primary'>Cart -</button>
+            <button className='btn btn-primary' onClick={() => takeBeerFromCart(ale.id, ales)}>Cart -</button>
             <h3>-------------------</h3>
           </div>
           )}

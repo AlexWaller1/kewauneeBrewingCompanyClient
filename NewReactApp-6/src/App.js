@@ -12,6 +12,8 @@ function App() {
 
   const [userCartNames, setCartNames] = useState([]);
 
+  const [userCartNames2, setCartNames2] = useState({});
+
   const [cartCount, setCartCount] = useState({
       buffaloWings: 1,
       stackedNachos: 1,
@@ -279,11 +281,13 @@ const addToCart = (id) => {
 
     let cartNameClone = [...userCartNames];
 
-    if (!cartNameClone.includes(newName)) {
-        cartNameClone.push(newName);
+    let cartNameClone2 = {...userCartNames2};
+
+    if (cartNameClone2[newName] == undefined) {
+        cartNameClone2[newName] = true;
         newAppetizer[0].quantity = newAppetizer[0].quantity + 1;
         setCart([...userCart, ...newAppetizer]);
-        setCartNames([...cartNameClone]);
+        setCartNames2({...cartNameClone2});
     } else {
           let i = 0;
           for (; i < cartClone.length; i++) {
@@ -342,8 +346,20 @@ const takeFromCart = (id) => {
 
     if (newQuantity == 0) {
         console.log("quantity == 0");
-        let c2 = cartClone.filter(c1 => c1.quantity != 0);
+
+        let c1 = cartClone.filter(c1 => c1.quantity == 0);
+
+        let newName = c1[0].name;
+
+        let cartNameClone2 = {...userCartNames2};
+    
+        delete cartNameClone2[newName];
+
+        setCartNames2({...cartNameClone2});
+
+        let c2 = cartClone.filter(c2 => c2.quantity != 0);
         setCart([...c2]);
+        
     }
     
    
@@ -513,6 +529,8 @@ const addBeerToCart = (id, beer) => {
         beerItem.quantity = beerItem.quantity + 1;
     } else {
         beerItem.quantity = beerItem.quantity + 1;
+
+        
     }
 
     setCart([...cartClone]);
@@ -520,6 +538,44 @@ const addBeerToCart = (id, beer) => {
     
 
     
+}
+
+const takeBeerFromCart = (id, beer) => {
+    console.log("take beer from cart ");
+
+    let beerItemArray = beer.filter(b1 => b1.id == id);
+
+    
+
+    let beerItem = beerItemArray[0];
+
+    console.log(beerItem);
+
+    console.log(`quantity: ${beerItem.quantity}`);
+
+    console.log(beer);
+
+    let cartClone = [...userCart];
+
+    if (beerItem.quantity > 0) {
+        beerItem.quantity = beerItem.quantity - 1;
+        setAles([...beer]);
+
+        // let i = 0;
+
+        // for (; i < cartClone.length; i++) {
+        //     if (beerItem.id == cartClone[i].id) {
+        //         cartClone[i].quantity = cartClone[i].quantity - 1;
+        //     }
+        // }
+        // setCart([...cartClone]);
+    }
+    if (beerItem.quantity == 0) {
+       let newCart = cartClone.filter(item => item.quantity != 0);
+       setCart([...newCart]);
+       
+
+    }
 }
 
 
@@ -535,7 +591,7 @@ const addBeerToCart = (id, beer) => {
       
       <NavLinks />
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart} takeBeerFromCart={takeBeerFromCart}/>
       {/* </div> */}
       </div>
     </Router>
