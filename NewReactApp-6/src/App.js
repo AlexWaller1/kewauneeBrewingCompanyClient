@@ -448,11 +448,13 @@ const addToCart3 = (id) => {
 
     let cartNameClone = [...userCartNames];
 
-    if (!cartNameClone.includes(newName)) {
-        cartNameClone.push(newName);
+    let cartNameClone2 = {...userCartNames2};
+
+    if (cartNameClone2[newName] == undefined) {
+        cartNameClone2[newName] = true;
         newDessert[0].quantity = newDessert[0].quantity + 1;
         setCart([...userCart, ...newDessert]);
-        setCartNames([...cartNameClone]);
+        setCartNames2({...cartNameClone2});
     } else {
         let i = 0;
         for (; i < cartClone.length; i++) {
@@ -491,6 +493,16 @@ const takeFromCart3 = (id) => {
         }
     }
     if (newQuantity == 0) {
+        let c1 = cartClone.filter(c1 => c1.quantity == 0);
+
+        let newName = c1[0].name;
+
+        let cartNameClone2 = {...userCartNames2};
+
+        delete cartNameClone2[newName];
+
+        setCartNames2({...cartNameClone2});
+
         let c2 = cartClone.filter(d1 => d1.quantity != 0);
         setCart([...c2]);
     }
