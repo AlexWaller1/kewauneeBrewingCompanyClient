@@ -279,8 +279,6 @@ const addToCart = (id) => {
 
     let cartClone = [...userCart];
 
-    let cartNameClone = [...userCartNames];
-
     let cartNameClone2 = {...userCartNames2};
 
     if (cartNameClone2[newName] == undefined) {
@@ -376,11 +374,13 @@ const addToCart2 = (id) => {
 
     let cartNameClone = [...userCartNames];
 
-    if (!cartNameClone.includes(newName)) {
-        cartNameClone.push(newName);
+    let cartNameClone2 = {...userCartNames2};
+
+    if (cartNameClone2[newName] == undefined) {
+        cartNameClone2[newName] = true;
         newMainCourse[0].quantity = newMainCourse[0].quantity + 1;
         setCart([...userCart, ...newMainCourse]);
-        setCartNames([...cartNameClone]);
+        setCartNames2({...cartNameClone2});
     } else {
         let i = 0;
         for (; i < cartClone.length; i++) {
@@ -421,6 +421,17 @@ const takeFromCart2 = (id) => {
            }
        }
        if (newQuantity == 0) {
+           
+           let c1 = cartClone.filter(c1 => c1.quantity == 0);
+
+           let newName = c1[0].name;
+
+           let cartNameClone2 = {...userCartNames2};
+
+           delete cartNameClone2[newName];
+
+           setCartNames2({...cartNameClone2});
+
            let c2 = cartClone.filter(m1 => m1.quantity != 0);
            setCart([...c2]);
        }
