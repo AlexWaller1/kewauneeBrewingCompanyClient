@@ -1,6 +1,6 @@
 import React from 'react'
 
- const PortersAndStoutsDiv = ({ userCart, porters, stouts, addBeerToCart}) => {
+ const PortersAndStoutsDiv = ({ userCart, porters, stouts, addBeerToCart, takeBeerFromCart}) => {
   return (
     <div id="porters-stouts-div">
       <div id="porters-div">
@@ -14,7 +14,7 @@ import React from 'react'
          <br />
          <button className='btn btn-primary' onClick={() => addBeerToCart(porter.id, porters)}>Cart +</button>
          <h2>{porter.quantity}</h2>
-         <button className='btn btn-primary'>Cart -</button>
+         <button className='btn btn-primary' onClick={() => takeBeerFromCart(porter.id, porters)}>Cart -</button>
          <h3>-------------------</h3>
         </div>
           )}
@@ -30,7 +30,7 @@ import React from 'react'
             <br />
             <button className="btn btn-primary" onClick={() => addBeerToCart(stout.id, stouts)}>Cart +</button>
             <h2>{stout.quantity}</h2>
-            <button className='btn btn-primary'>Cart -</button>
+            <button className='btn btn-primary' onClick={() => takeBeerFromCart(stout.id, stouts)}>Cart -</button>
             <h3>-------------------</h3>
 
           </div>

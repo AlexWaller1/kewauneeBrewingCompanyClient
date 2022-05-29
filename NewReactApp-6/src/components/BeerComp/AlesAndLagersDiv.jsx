@@ -32,7 +32,7 @@ import React from 'react'
               <br />
               <button className='btn btn-primary' onClick={() => addBeerToCart(lager.id, lagers)}>Cart +</button>
               <h3>{lager.quantity}</h3>
-              <button className="btn btn-primary">Cart -</button>
+              <button className="btn btn-primary" onClick={() => takeBeerFromCart(lager.id, lagers)}>Cart -</button>
               <h3>-------------------</h3>
             </div>
             )

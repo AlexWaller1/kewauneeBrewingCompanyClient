@@ -566,20 +566,30 @@ const addBeerToCart = (id, beer) => {
 
     let namesClone = [...userCartNames];
 
+    let namesClone2 = {...userCartNames2};
+
+    let newCount = cartCount;
+
     let cartClone = [...userCart];
 
-    if (!namesClone.includes(beerName)) {
-        namesClone.push(beerName);
+    if (namesClone2[beerName] == undefined) {
+        namesClone2[beerName] = true;
+       // namesClone.push(beerName);
         cartClone.push(beerItem);
         beerItem.quantity = beerItem.quantity + 1;
+        newCount++;
     } else {
         beerItem.quantity = beerItem.quantity + 1;
+        newCount++;
 
         
     }
-
+    
+    console.log(cartClone);
     setCart([...cartClone]);
-    setCartNames([...namesClone]);
+   // setCartNames([...namesClone]);
+    setCartNames2({...namesClone2});
+    setCartCount(newCount);
     
 
     
@@ -588,23 +598,40 @@ const addBeerToCart = (id, beer) => {
 const takeBeerFromCart = (id, beer) => {
     console.log("take beer from cart ");
 
+    console.log(id);
+
+    let cartClone = [...userCart];
+
+    console.log(cartClone);
+
     let beerItemArray = beer.filter(b1 => b1.id == id);
 
-    
+    let cartItemArray = cartClone.filter(c1 => c1.id == id);
+
+    console.log(cartItemArray);
 
     let beerItem = beerItemArray[0];
+
+    let cartItem = cartItemArray[0];
 
     console.log(beerItem);
 
     console.log(`quantity: ${beerItem.quantity}`);
 
-    console.log(beer);
+    
 
-    let cartClone = [...userCart];
 
-    if (beerItem.quantity > 0) {
-        beerItem.quantity = beerItem.quantity - 1;
-        setAles([...beer]);
+    
+
+    let cartNameClone2 = {...userCartNames2};
+
+    let newCount = cartCount;
+
+    if (cartItem.quantity > 0) {
+        cartItem.quantity = cartItem.quantity - 1;
+        setCart([...cartClone]);
+        newCount--;
+        setCartCount(newCount);
 
         // let i = 0;
 
