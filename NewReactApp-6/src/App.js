@@ -650,6 +650,24 @@ const takeBeerFromCart = (id, beer) => {
     }
 }
 
+const resetState = () => {
+
+
+
+    let cartClone = userCart;
+
+    for (let i = 0; i < cartClone.length; i++) {
+        cartClone[i].quantity = 0;
+    }
+
+    setCart(cartClone);
+    setCart([]);
+    setCartNames2({});
+    setCartCount(0);
+
+   
+}
+
 
 
   return (
@@ -657,13 +675,13 @@ const takeBeerFromCart = (id, beer) => {
       <div className="App">
       {/* <div className="container-lg"> */}
         
-      <Header text="Kewaunee Brewing Company" />
+      <Header text="Kewaunee Brewing Company" onClick={console.log("hello")}/>
       
      
       
       <NavLinks userCart={userCart} cartCount={cartCount}/>
 
-      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart} takeBeerFromCart={takeBeerFromCart}/>
+      <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart} takeBeerFromCart={takeBeerFromCart} resetState={resetState}/>
       {/* </div> */}
       </div>
     </Router>
