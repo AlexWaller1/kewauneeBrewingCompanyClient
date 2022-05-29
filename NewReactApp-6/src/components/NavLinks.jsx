@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
- const NavLinks = () => {
+ const NavLinks = ({ userCart, cartCount }) => {
+   
   return (
     <ul className="nav-links-list">
         <h4>
@@ -26,7 +27,7 @@ import { Link } from "react-router-dom";
             <Link to="/contact">Contact Us</Link>
         </h4>
         <h4>
-            <Link to="/cart">Checkout</Link>
+            <Link to="/cart">{`Cart ${cartCount}`}</Link>
         </h4>
     </ul>
   )

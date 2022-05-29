@@ -14,17 +14,9 @@ function App() {
 
   const [userCartNames2, setCartNames2] = useState({});
 
-  const [cartCount, setCartCount] = useState({
-      buffaloWings: 1,
-      stackedNachos: 1,
-      barriaTacos: 1,
-      potStickers: 1,
-      cheeseBurger: 1,
-      turkeyClub: 1,
-      cowboyRibeye: 1,
-      spareRibs: 1,
+  const [cartCount, setCartCount] = useState(0)
 
-  });
+ 
 
   const [appetizers, setAppetizers] = useState([
     {
@@ -281,17 +273,23 @@ const addToCart = (id) => {
 
     let cartNameClone2 = {...userCartNames2};
 
+    let newCount = cartCount;
+
     if (cartNameClone2[newName] == undefined) {
         cartNameClone2[newName] = true;
         newAppetizer[0].quantity = newAppetizer[0].quantity + 1;
         setCart([...userCart, ...newAppetizer]);
         setCartNames2({...cartNameClone2});
+        newCount++;
+        setCartCount(newCount)
     } else {
           let i = 0;
           for (; i < cartClone.length; i++) {
               if (cartClone[i].name == newName) {
                   cartClone[i].quantity = cartClone[i].quantity + 1;
                   setCart([...cartClone]);
+                  newCount++;
+                  setCartCount(newCount);
               }
           }
       
@@ -327,6 +325,8 @@ const takeFromCart = (id) => {
 
     let cartClone = [...userCart];
 
+    let newCount = cartCount;
+
     if (currentQuantity > 0) {
         let i = 0;
 
@@ -336,6 +336,8 @@ const takeFromCart = (id) => {
                 newQuantity = cartClone[i].quantity;
                 console.log(newQuantity);
                 setCart([...cartClone]);
+                newCount--;
+                setCartCount(newCount);
             }
         }
         
@@ -376,17 +378,23 @@ const addToCart2 = (id) => {
 
     let cartNameClone2 = {...userCartNames2};
 
+    let newCount = cartCount;
+
     if (cartNameClone2[newName] == undefined) {
         cartNameClone2[newName] = true;
         newMainCourse[0].quantity = newMainCourse[0].quantity + 1;
         setCart([...userCart, ...newMainCourse]);
         setCartNames2({...cartNameClone2});
+        newCount++;
+        setCartCount(newCount);
     } else {
         let i = 0;
         for (; i < cartClone.length; i++) {
             if (cartClone[i].name == newName) {
                 cartClone[i].quantity = cartClone[i].quantity + 1;
                 setCart([...cartClone]);
+                newCount++;
+                setCartCount(newCount);
             }
         }
     }
@@ -409,6 +417,8 @@ const takeFromCart2 = (id) => {
 
        let cartClone = [...userCart];
 
+       let newCount = cartCount;
+
        if (currentQuantity > 0) {
            let i = 0;
 
@@ -417,6 +427,8 @@ const takeFromCart2 = (id) => {
                    cartClone[i].quantity = cartClone[i].quantity - 1;
                    newQuantity = cartClone[i].quantity;
                    setCart([...cartClone]);
+                   newCount--;
+                   setCartCount(newCount);
                }
            }
        }
@@ -450,11 +462,15 @@ const addToCart3 = (id) => {
 
     let cartNameClone2 = {...userCartNames2};
 
+    let newCount = cartCount;
+
     if (cartNameClone2[newName] == undefined) {
         cartNameClone2[newName] = true;
         newDessert[0].quantity = newDessert[0].quantity + 1;
         setCart([...userCart, ...newDessert]);
         setCartNames2({...cartNameClone2});
+        newCount++;
+        setCartCount(newCount);
     } else {
         let i = 0;
         for (; i < cartClone.length; i++) {
@@ -462,6 +478,8 @@ const addToCart3 = (id) => {
                 cartClone[i].quantity = cartClone[i].quantity + 1;
                 
                 setCart([...cartClone]);
+                newCount++;
+                setCartCount(newCount);
             }
         }
     }
@@ -481,6 +499,8 @@ const takeFromCart3 = (id) => {
 
     let cartClone = [...userCart];
 
+    let newCount = cartCount;
+
     if (currentQuantity > 0) {
         let i = 0;
 
@@ -489,6 +509,8 @@ const takeFromCart3 = (id) => {
                 cartClone[i].quantity = cartClone[i].quantity - 1;
                 newQuantity = cartClone[i].quantity;
                 setCart([...cartClone]);
+                newCount--;
+                setCartCount(newCount);
             }
         }
     }
@@ -612,7 +634,7 @@ const takeBeerFromCart = (id, beer) => {
       
      
       
-      <NavLinks />
+      <NavLinks userCart={userCart} cartCount={cartCount}/>
 
       <RouterLinks userCart={userCart} userCartNames={userCartNames} cartCount={cartCount} appetizers={appetizers} mainCourses={mainCourses} desserts={desserts} addToCart={addToCart} takeFromCart={takeFromCart} addToCart2={addToCart2} takeFromCart2={takeFromCart2} addToCart3={addToCart3} takeFromCart3={takeFromCart3} deleteFromCart={deleteFromCart} ales={ales} lagers={lagers} porters={porters} stouts={stouts} addBeerToCart={addBeerToCart} takeBeerFromCart={takeBeerFromCart}/>
       {/* </div> */}
