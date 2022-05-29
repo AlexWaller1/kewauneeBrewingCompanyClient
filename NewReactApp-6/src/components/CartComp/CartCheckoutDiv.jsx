@@ -43,6 +43,11 @@ import { useState } from "react";
       setClicked3(false);
       
     }
+
+    let onSubmit2 = (e) => {
+      e.preventDefault();
+      console.log("form submitted!");
+    }
   return (
     <div>
         <h1>Order Checkout</h1>
@@ -51,7 +56,7 @@ import { useState } from "react";
         <button className="btn btn-primary" onClick={() => changeClick()}>Pay For Order</button>
         <br />
         <br />
-        {clicked  && !clicked3 ? <form>
+        {clicked  && !clicked3 ? <form onSubmit={onSubmit2}>
             <input type="text" placeholder='card number...' value={cardIntput} onChange={e => setCardInput(e.target.value)}/>
             <br />
             <br />
